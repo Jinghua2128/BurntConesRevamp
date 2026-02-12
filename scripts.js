@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', () => {
     const header = document.getElementById('main-header');
     const menuToggle = document.getElementById('menu-toggle');
@@ -6,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const menuIcon = document.getElementById('menu-icon');
     const mobileLinks = document.querySelectorAll('.mobile-link');
 
-    // Scroll effect for header
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
             header.classList.remove('bg-transparent', 'py-6');
@@ -17,7 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Mobile menu logic
     let isOpen = false;
 
     const toggleMenu = (forceClose = false) => {
@@ -40,12 +37,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     menuToggle.addEventListener('click', () => toggleMenu());
 
-    // Close menu when clicking a link
     mobileLinks.forEach(link => {
         link.addEventListener('click', () => toggleMenu(true));
     });
 
-    // Accessible Escape key to close menu
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && isOpen) {
             toggleMenu(true);
